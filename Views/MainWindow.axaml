@@ -1,0 +1,127 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TypeThread.MainWindow"
+        Title="TypeThread"
+        Background="#3C3C3C"
+        KeyboardNavigation.TabNavigation="None"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" CornerRadius="20" Background="#292D2D">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="9*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Padding="10" CornerRadius="20,20,0,0" Background="#212424">
+                    <TextBlock x:Name="FileName" FontSize="32" Foreground="#7F8282" VerticalAlignment="Center"/>
+                </Border>
+                <AvaloniaEdit:TextEditor
+                    x:Name="Editor"
+                    Grid.Row="1"
+                    FontSize="20"
+                    Foreground="#ffffff"
+                    ShowLineNumbers="True"
+                    IsReadOnly="True"
+                    IsHitTestVisible="False"
+                    VerticalScrollBarVisibility="Disabled"
+                    HorizontalScrollBarVisibility="Disabled"
+                    />
+                <TextBlock
+                    x:Name="Watermark"
+                    Grid.Row="1"
+                    Margin="29.25,0,0,0"
+                    LineSpacing="2.8"
+                    FontSize="20"
+                    Foreground="White"
+                    Opacity="0.3"
+                    TextWrapping="Wrap"
+                    />
+            </Grid>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="0" CornerRadius="0,0,20,20" Background="#212424">
+            <TextBlock Text="TypeThread" FontSize="52" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="4" CornerRadius="20,20,0,0" Background="#212424">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid
+                    x:Name="TestTimeSliderTicksValues"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    Margin="20,0"
+                    VerticalAlignment="Bottom"
+                >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="30" Foreground="#ffffff" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Column="1" Text="60" Foreground="#ffffff" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="90" Foreground="#ffffff" HorizontalAlignment="Right"/>
+                </Grid>
+                <Slider
+                    x:Name="TestTimeSlider"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    Margin="20,0"
+                    Minimum="30"
+                    Value="60"
+                    Maximum="90"
+                    IsSnapToTickEnabled="True"
+                    TickFrequency="30"
+                    TickPlacement="Outside"
+                    Foreground="#ffffff"
+                    Background="#000000"
+                    Height="40"
+                />
+                <TextBlock
+                    x:Name="TimerText"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    FontSize="28"
+                    Foreground="White"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    IsVisible="False"
+                />
+                <ProgressBar
+                    x:Name="FileCompletionProgressBar"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    Margin="20,0"
+                    Maximum="1"
+                    Foreground="White"
+                    Height="10"
+                    IsVisible="False"
+                />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

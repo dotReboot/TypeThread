@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="TypeThread.ResultWindow"
+	Background="#212424"
+	MinHeight="300"
+	MinWidth="650"
+	MaxHeight="300"
+	MaxWidth="650"
+	KeyboardNavigation.TabNavigation="None"
+	WindowStartupLocation="CenterOwner"
+>
+	<StackPanel Spacing="40" Orientation="Vertical" VerticalAlignment="Center">
+		<TextBlock x:Name="ResultText" FontSize="20" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		<Button Content="Continue" FontSize="20" Foreground="#000000" Background="#ffffff" Click="CloseWindow" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	</StackPanel>
+
+</Window>
